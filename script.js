@@ -13,11 +13,6 @@ const header = document.querySelector('.header');
 const btnScroll = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 
-
-//operation taps
-
-const 
-
 const openModal = function (event) {
   event.preventDefault();
   modal.classList.remove('hidden');
@@ -70,3 +65,17 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 
+//operation
+
+const tabContainer = document.querySelector('.operations__tab-container');
+const tabBtn = document.querySelectorAll('.operations__tab');
+const tabContent = document.querySelectorAll('.operations__content');
+
+tabContainer.addEventListener('click', e => {
+  const clicked = e.target.closest('.operations__tab');
+  if (!clicked) return;
+
+  tabBtn.forEach(t => t.classList.remove('operations__tab--active'));
+  clicked.classList.add('operations__tab--active');
+  console.log(clicked);
+});
